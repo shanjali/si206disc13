@@ -33,10 +33,12 @@ def add_employee(filename, cur, conn):
     for lines in file_data:
         cur.execute('INSERT INTO employees (employee_id, first_name, last_name, job_id, hire_date, salary) VALUES', (lines['employee_id'], lines['first_name'],
                                                                                                                     lines['last_name'], lines['job_id'], lines['hire_date'], lines['salary']))
+    conn.commit()
 
 # TASK 2: GET JOB AND HIRE_DATE INFORMATION
 def job_and_hire_date(cur, conn):
-    pass
+    cur.execute('SELECT hire_date, job_title FROM employees INNER JOIN Jobs')
+    conn.commit()
 
 # TASK 3: IDENTIFY PROBLEMATIC SALARY DATA
 # Apply JOIN clause to match individual employees
