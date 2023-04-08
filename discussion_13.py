@@ -47,7 +47,7 @@ def problematic_salary(cur, conn):
 
 # TASK 4: VISUALIZATION
 def visualization_salary_data(cur, conn):
-    pass
+    plt.scatter(x, y, color='red', marker='x')
 
 class TestDiscussion12(unittest.TestCase):
     def setUp(self) -> None:
